@@ -1,0 +1,23 @@
+artifacts_dir: artifacts
+
+data_ingestion:
+  dataset_dir: data
+  dataset_name: predictive_maintenance.csv
+  raw_data_dir: raw_data
+  train_dir: train
+  test_dir: test
+
+data_validation:
+  schema_file: config/schema.yaml
+  validation_report_dir: validation
+  validation_report_file: validation_report.yaml
+
+data_transformation:
+  preprocessor_dir: preprocessor
+  preprocessor_name: preprocessor.pkl
+  transformed_dir: transformed
+  train_array_name: train.npy
+  test_array_name: test.npy
+
+model_trainer:
+  trained_model_dir: model
