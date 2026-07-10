@@ -20,4 +20,8 @@ data_transformation:
   test_array_name: test.npy
 
 model_trainer:
+  model_trainer:
   trained_model_dir: model
+  trained_model_name: trained_model.pkl
+  expected_accuracy: 0.70
+  overfitting_underfitting_threshold: 0.10

@@ -1,9 +1,17 @@
 import yaml
 import joblib
 import os
+import pickle
 
 from src.logger import logger
 
+def save_object(file_path, obj):
+
+    os.makedirs(os.path.dirname(file_path), exist_ok=True)
+
+    with open(file_path, "wb") as file_obj:
+
+        pickle.dump(obj, file_obj)
 
 def read_yaml(file_path):
     with open(file_path, "r") as yaml_file:

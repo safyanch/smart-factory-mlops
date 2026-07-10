@@ -3,7 +3,8 @@ import yaml
 from src.entity.config_entity import (
     DataIngestionConfig,
     DataValidationConfig,
-    DataTransformationConfig
+    DataTransformationConfig,
+    ModelTrainerConfig
 )
 class ConfigurationManager:
 
@@ -68,3 +69,15 @@ class ConfigurationManager:
         schema_file=config["data_validation"]["schema_file"]
 
     )
+    def get_model_trainer_config(self) -> ModelTrainerConfig:
+
+        config = self.config
+
+        return ModelTrainerConfig(
+
+            artifacts_dir=config["artifacts_dir"],
+
+            trained_model_dir=config["model_trainer"]["trained_model_dir"],
+
+            trained_model_name=config["model_trainer"]["trained_model_name"]
+        )

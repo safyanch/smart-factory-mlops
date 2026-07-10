@@ -39,3 +39,16 @@ class DataTransformationConfig:
     test_array_name: str
 
     schema_file: str
+
+@dataclass
+class ModelTrainerConfig:
+    artifacts_dir: str
+    trained_model_dir: str
+    trained_model_name: str
+    expected_accuracy: float
+    overfitting_underfitting_threshold: float
+@dataclass
+class ModelTrainerConfig:
+    artifacts_dir: str
+    trained_model_dir: str
+    trained_model_name: str

@@ -2,7 +2,7 @@ from src.config.configuration import ConfigurationManager
 from src.components.data_ingestion import DataIngestion
 from src.components.data_validation import DataValidation
 from src.components.data_transformation import DataTransformation
-
+from src.components.model_trainer import ModelTrainer
 
 def main():
 
@@ -63,6 +63,22 @@ def main():
     )
 
     print(data_transformation_artifact)
+
+    # --------------------------
+# Model Training
+# --------------------------
+
+    model_trainer_config = (
+        configuration.get_model_trainer_config()
+    )
+    model_trainer = ModelTrainer(
+    config=model_trainer_config,
+    data_transformation_artifact=data_transformation_artifact
+    )
+    model_trainer_artifact = (
+    model_trainer.initiate_model_trainer()
+    )
+    print(model_trainer_artifact)
 
 
 if __name__ == "__main__":
